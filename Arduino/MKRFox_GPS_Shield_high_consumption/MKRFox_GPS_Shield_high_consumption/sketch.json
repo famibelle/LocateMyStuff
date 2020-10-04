@@ -1,0 +1,9 @@
+{
+  "cpu": {
+    "fqbn": "arduino:mraa:arm_linux_generic",
+    "name": "pihole_home",
+    "type": "cloud"
+  },
+  "secrets": [],
+  "included_libs": []
+}
