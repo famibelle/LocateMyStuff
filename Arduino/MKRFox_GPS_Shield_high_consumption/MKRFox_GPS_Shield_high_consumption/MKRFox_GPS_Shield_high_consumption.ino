@@ -555,9 +555,11 @@ void loop() {
 
   if (MyCoord.validGPS_signal == true) {
     //GPSSignalHeartbeat.set(5);
-    analogWrite(HEARTBEATLED, 255);
+    //analogWrite(HEARTBEATLED, 255);
+    digitalWrite(MOTIONLED, HIGH);
   } else {
-    analogWrite(HEARTBEATLED, 0);
+    //analogWrite(HEARTBEATLED, 0);
+    digitalWrite(MOTIONLED, LOW);
     //GPSSignalHeartbeat.set(1);
   }
 
