@@ -5,7 +5,6 @@
 
 Heartbeat GPSSignalHeartbeat;
 
-
 #define MOTIONLED 6 // the LED that will goes ON when a motion is detected
 #define HEARTBEATLED 2 // the LED that will goes ON when GPS signal is received
 
@@ -521,7 +520,7 @@ void setup() {
   gpscoord coords = {MyCoord.a_latitude, MyCoord.a_longitude, (float)VeloShaked.Secousses}; //  gpscoord coords = {fn_lat, fn_lng, fn_alt, GPSSignal};
   PositionData = ConvertGPSdata(&coords, sizeof(gpscoord)); //Send data
   SendSigfox(PositionData);
-  progressBar(10, "Premier envoi sur le réseaus SigFox");
+  progressBar(10, "Premier envoi sur le réseaux SigFox");
 
   HeureDernierEnvoi = millis();
   if (debug) {
@@ -607,4 +606,24 @@ void loop() {
       Serial.print("Prochaine fenêtre d'envoi dans "); Serial.print((HeureDernierEnvoi + FENETRE_ENVOI * 60 * 1000 - millis()) / 60 / 1000); Serial.println(" mn");
     }
   }
+  Serial.print("Pipe separated values: GPS::latitude GPS:longitude GPS::signal  sigfox::essai sigfox::essais Velo::acceleration  Velo::secousses");Serial.println("|");
+  Serial.print("\n");
+  Serial.print("Veleurs");               Serial.print("|");
+  Serial.print(millis());               Serial.print("|");
+  Serial.print(coords.a_latitude );     Serial.print("|");
+  Serial.print(coords.a_longitude);     Serial.print("|");
+  Serial.print(coords.validGPS_signal); Serial.print("|");
+
+  Serial.print(essais);                 Serial.print("|");
+  Serial.print(succes);                 Serial.print("|");
+
+  Serial.print(AccelerationSysteme);    Serial.print("|");
+  Serial.print(VeloShaked.Secousses);   Serial.print("|");
+
+  Serial.print(AccelX);                 Serial.print("|");
+  Serial.print(AccelY);                 Serial.print("|");
+  Serial.print(AccelZ);                 Serial.print("|");
+
+  Serial.println();
+  
 }
