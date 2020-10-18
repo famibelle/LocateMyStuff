@@ -608,7 +608,7 @@ void loop() {
   }
   Serial.print("Pipe separated values: GPS::latitude GPS:longitude GPS::signal  sigfox::essai sigfox::essais Velo::acceleration  Velo::secousses");Serial.println("|");
   Serial.print("\n");
-  Serial.print("Veleurs");               Serial.print("|");
+  Serial.print("Valeurs");               Serial.print("|");
   Serial.print(millis());               Serial.print("|");
   Serial.print(coords.a_latitude );     Serial.print("|");
   Serial.print(coords.a_longitude);     Serial.print("|");
