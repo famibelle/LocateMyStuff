@@ -9,7 +9,7 @@ Float lat;
 Float lon;
 
 void setup() {
-    size(200, 200);
+    size(200, 200); // création d'un fenêtre de 200x200 pixels
   
   
   println(Arduino.list());
@@ -63,4 +63,3 @@ void draw() {
     }
   }
 }
-
